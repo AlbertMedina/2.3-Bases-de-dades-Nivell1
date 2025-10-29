@@ -47,7 +47,7 @@ db.createCollection("glasses", {
           "required": ["type", "color"],
           "properties": {
             "type": {
-              "enum": 
+              "enum": ['rimless','plastic','metal']
             },
             "color": {
               "bsonType": "string"
