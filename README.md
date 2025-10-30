@@ -27,7 +27,7 @@ Design of a MongoDB database for a simplified version of YouTube to manage users
 1. Clone repository (https://github.com/AlbertMedina/2.3-Bases-de-dades-Nivell3.git).
 `git clone https://github.com/AlbertMedina/2.3-Bases-de-dades-Nivell3.git`
 2. Start a MongoDB container using Docker
-`docker run --name [container-name] -d -p 27017:27017 mongodb/mongodb-atlas-local`
+`docker run --name [container-name] -d -p 27017:27017 [mongo-image]`
 
 ## Execution
 1. Open MongoDB Compass and connect to your Docker container.
