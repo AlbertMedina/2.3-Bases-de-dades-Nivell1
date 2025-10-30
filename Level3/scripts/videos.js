@@ -3,7 +3,7 @@ db.createCollection("videos", {
     $jsonSchema: {
       "bsonType": "object",
       "title": "videos",
-      "required": ["title", "description", "size", "file_name", "duration", "thumbnail", "plays", "state", "publication_date", "tags", "likes", "dislikes", "user_id", "comments"],
+      "required": ["title", "description", "size", "file_name", "duration", "thumbnail", "plays", "state", "publication_date", "tags", "reactions", "user_id", "comments", "channel_id"],
       "properties": {
         "title": {
           "bsonType": "string"
@@ -44,29 +44,17 @@ db.createCollection("videos", {
             }
           }  
         },
-        "likes": {
+        "reactions": {
           "bsonType": "array",
           "items": {
             "title": "object",
-            "required": ["user_id", "date"],
+            "required": ["user_id", "type", "date"],
             "properties": {
               "user_id": {
                 "bsonType": "objectId"
               },
-              "date": {
-                "bsonType": "date"
-              }
-            }
-          }  
-        },
-        "dislikes": {
-          "bsonType": "array",
-          "items": {
-            "title": "object",
-            "required": ["user_id", "date"],
-            "properties": {
-              "user_id": {
-                "bsonType": "objectId"
+              "type": {
+                "enum": ['like','dislike']
               },
               "date": {
                 "bsonType": "date"
@@ -94,6 +82,9 @@ db.createCollection("videos", {
               }
             }
           }  
+        },
+        "channel_id": {
+          "bsonType": "objectId"
         }
       }  
     } 
