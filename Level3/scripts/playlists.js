@@ -19,6 +19,9 @@ db.createCollection("playlists", {
           "items": {
             "bsonType": "objectId"
           }
+        },
+        "user_id": {
+          "bsonType": "objectId"
         }
       }  
     } 
